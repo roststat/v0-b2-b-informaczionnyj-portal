@@ -28,6 +28,7 @@ import {
 } from "@/components/ui/card";
 import { SiteHeader } from "@/components/site-header";
 import { SiteFooter } from "@/components/site-footer";
+import { ContactButton } from "@/components/contact-button";
 import {
   advantages,
   industries,
@@ -464,12 +465,7 @@ export default function HomePage() {
                     {company.address}
                   </p>
                 </div>
-                <Button size="lg" asChild className="w-full sm:w-auto">
-                  <Link href="/contact">
-                    Заполнить форму обратной связи
-                    <ArrowRight className="ml-2 h-4 w-4" />
-                  </Link>
-                </Button>
+                <ContactButton className="w-full sm:w-auto" />
               </div>
             </div>
           </div>
