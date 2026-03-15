@@ -35,7 +35,9 @@ export const navigation = [
       { name: 'FAQ', href: '/faq' },
     ],
   },
+  { name: 'Проекты', href: '/projects' },
   { name: 'Блог', href: '/blog' },
+  { name: 'Контакты', href: '/contact' },
 ]
 
 export const industries = [
