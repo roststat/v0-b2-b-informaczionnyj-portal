@@ -40,21 +40,29 @@ export default function ProjectsPage() {
             {projects.map((project) => (
               <Link key={project.slug} href={`/projects/${project.slug}`} className="group">
                 <div className="overflow-hidden rounded-xl border bg-card transition-all group-hover:border-primary/30 group-hover:shadow-md">
-                  {/* Место для фото */}
-                  <div className="relative h-48 w-full overflow-hidden bg-muted">
-                    {project.image ? (
+                  {/* Превью проекта */}
+                  <div
+                    className="relative h-48 w-full overflow-hidden"
+                    style={{background: "linear-gradient(135deg, #5bbfb5 0%, #3da89e 40%, #c8a882 100%)"}}
+                  >
+                    <div className="absolute inset-0 flex items-end justify-center gap-3 px-4 pb-0">
                       <img
-                        src={project.image}
-                        alt={project.name}
-                        className="h-full w-full object-cover transition-transform group-hover:scale-105"
+                        src="/noos-cats.png"
+                        alt="для кошек"
+                        className="h-40 w-auto drop-shadow-lg transition-transform group-hover:scale-105"
+                        style={{transform: "rotate(-4deg)"}}
                       />
-                    ) : (
-                      <div className="flex h-full w-full items-center justify-center">
-                        <span className="text-4xl font-bold text-muted-foreground/20">
-                          {project.name.charAt(0)}
-                        </span>
-                      </div>
-                    )}
+                      <img
+                        src="/noos-dogs.png"
+                        alt="для собак"
+                        className="h-44 w-auto drop-shadow-lg transition-transform group-hover:scale-105"
+                        style={{transform: "rotate(3deg)"}}
+                      />
+                    </div>
+                    <div className="absolute left-3 top-3">
+                      <span className="text-xs font-black italic text-[#e8334a] drop-shadow">ВКУСНЫЙ</span>
+                      <span className="ml-1 text-lg font-black text-white drop-shadow">НООС</span>
+                    </div>
                   </div>
                   <div className="p-5">
                     <h2 className="text-lg font-bold tracking-tight">{project.name}</h2>
