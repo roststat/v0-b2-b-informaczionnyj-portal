@@ -106,12 +106,15 @@ export function SiteFooter() {
             {"© "}
             {company.year} {company.name}. Все права защищены.
           </p>
-          <div className="flex gap-4 text-xs text-sidebar-foreground/50">
-            <Link
-              href="/terms"
-              className="transition-colors hover:text-sidebar-primary"
-            >
+          <div className="flex flex-wrap gap-4 text-xs text-sidebar-foreground/50">
+            <Link href="/privacy" className="transition-colors hover:text-sidebar-primary">
               Политика конфиденциальности
+            </Link>
+            <Link href="/cookies" className="transition-colors hover:text-sidebar-primary">
+              Политика Cookie
+            </Link>
+            <Link href="/requisites" className="transition-colors hover:text-sidebar-primary">
+              Реквизиты
             </Link>
           </div>
         </div>
