@@ -50,13 +50,49 @@ export default function VkusnyNoosPage() {
           />
 
           {/* Баннер проекта */}
-          <div className="relative mt-8 mb-10 h-56 w-full overflow-hidden rounded-2xl bg-muted sm:h-72">
-            <div className="flex h-full w-full items-center justify-center">
-              <span className="text-4xl font-black text-muted-foreground/20 tracking-widest sm:text-6xl">
-                ВКУСНЫЙ НООС
-              </span>
+          <div className="relative mt-8 mb-10 overflow-hidden rounded-2xl" style={{background: "linear-gradient(135deg, #5bbfb5 0%, #3da89e 40%, #c8a882 100%)"}}>
+            <div className="flex flex-col items-start justify-center gap-4 px-8 py-10 sm:flex-row sm:items-center sm:justify-between sm:px-12 sm:py-12">
+              {/* Текст */}
+              <div className="z-10 flex flex-col gap-2">
+                <span className="inline-block rounded-full bg-white/20 px-3 py-1 text-xs font-semibold uppercase tracking-widest text-white">
+                  спрей зоогигиенический
+                </span>
+                <div className="mt-1">
+                  <span
+                    className="block text-lg font-black leading-none text-[#e8334a] drop-shadow"
+                    style={{fontStyle: "italic", letterSpacing: "-0.02em"}}
+                  >
+                    ВКУС-НЫЙ
+                  </span>
+                  <span
+                    className="block text-6xl font-black leading-none text-white drop-shadow-lg sm:text-8xl"
+                    style={{letterSpacing: "-0.03em"}}
+                  >
+                    НООС
+                  </span>
+                </div>
+                <p className="mt-2 max-w-xs text-sm font-semibold uppercase tracking-wider text-white/90">
+                  Нейтрализатор запаха
+                </p>
+                <p className="text-xs text-white/70">с уважением к вашему питомцу</p>
+              </div>
+
+              {/* Фото продуктов */}
+              <div className="flex items-end gap-4 sm:gap-6">
+                <img
+                  src="/noos-cats.png"
+                  alt="ВКУСНЫЙ НООС для кошек"
+                  className="h-44 w-auto drop-shadow-xl sm:h-56"
+                  style={{transform: "rotate(-4deg)"}}
+                />
+                <img
+                  src="/noos-dogs.png"
+                  alt="ВКУСНЫЙ НООС для собак"
+                  className="h-48 w-auto drop-shadow-xl sm:h-64"
+                  style={{transform: "rotate(3deg)"}}
+                />
+              </div>
             </div>
-            {/* Замените содержимое div выше на <img src="..." className="h-full w-full object-cover" /> когда будет фото */}
           </div>
 
           <div className="mb-10">
