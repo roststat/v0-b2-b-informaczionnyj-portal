@@ -117,8 +117,8 @@ export default async function ProductPage({
         <div className="mx-auto max-w-7xl px-4 py-10">
           <BreadcrumbNav
             items={[
-              { name: "Применение", href: "/products" },
-              { name: product.title, href: `/products/${slug}` },
+              { label: "Применение", href: "/products" },
+              { label: product.title },
             ]}
           />
 

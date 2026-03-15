@@ -44,8 +44,8 @@ export default function VkusnyNoosPage() {
         <div className="mx-auto max-w-7xl px-4 py-10">
           <BreadcrumbNav
             items={[
-              { name: "Проекты", href: "/projects" },
-              { name: "ВКУСНЫЙ НООС", href: "/projects/vkusny-noos" },
+              { label: "Проекты", href: "/projects" },
+              { label: "ВКУСНЫЙ НООС" },
             ]}
           />
 

@@ -18,7 +18,7 @@ export default function ContactPage() {
       <main className="min-h-screen bg-background">
         <div className="mx-auto max-w-7xl px-4 py-10">
           <BreadcrumbNav
-            items={[{ name: "Контакты", href: "/contact" }]}
+            items={[{ label: "Контакты" }]}
           />
 
           <div className="mt-8 mb-12">

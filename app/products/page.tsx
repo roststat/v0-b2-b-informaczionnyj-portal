@@ -19,7 +19,7 @@ export default function ProductsPage() {
       <SiteHeader />
       <main className="min-h-screen bg-background">
         <div className="mx-auto max-w-7xl px-4 py-10">
-          <BreadcrumbNav items={[{ name: "Применение", href: "/products" }]} />
+          <BreadcrumbNav items={[{ label: "Применение" }]} />
 
           <div className="mt-8 mb-10">
             <h1 className="text-3xl font-bold tracking-tight">Области применения</h1>

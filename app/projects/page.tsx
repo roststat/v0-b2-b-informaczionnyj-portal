@@ -14,8 +14,8 @@ const projects = [
   {
     slug: "vkusny-noos",
     name: "ВКУСНЫЙ НООС",
-    tagline: "Натуральное питание для кошек и собак",
-    description: "Линейка кормов и лакомств для домашних животных на натуральных ингредиентах.",
+    tagline: "Зоогигиенические средства для животных",
+    description: "Спреи-нейтрализаторы запахов мочи, кала и других выделений кошек и собак. Действуют на молекулярном уровне.",
     image: null, // фото будет добавлено позже
     productsCount: 2,
   },
@@ -27,7 +27,7 @@ export default function ProjectsPage() {
       <SiteHeader />
       <main className="min-h-screen bg-background">
         <div className="mx-auto max-w-7xl px-4 py-10">
-          <BreadcrumbNav items={[{ name: "Проекты", href: "/projects" }]} />
+          <BreadcrumbNav items={[{ label: "Проекты" }]} />
 
           <div className="mt-8 mb-10">
             <h1 className="text-3xl font-bold tracking-tight">Проекты</h1>
