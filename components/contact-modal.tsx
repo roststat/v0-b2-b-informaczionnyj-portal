@@ -22,7 +22,7 @@ interface ContactModalProps {
 
 export function ContactModal({ open, onOpenChange }: ContactModalProps) {
   const [name, setName] = useState("")
-  const [phone, setPhone] = useState("")
+  const [phone, setPhone] = useState("+7")
   const [consent, setConsent] = useState(false)
   const [submitted, setSubmitted] = useState(false)
   const [loading, setLoading] = useState(false)
@@ -31,10 +31,10 @@ export function ContactModal({ open, onOpenChange }: ContactModalProps) {
   function validate() {
     const newErrors: typeof errors = {}
     if (!name.trim()) newErrors.name = "Введите ваше имя"
-    if (!phone.trim()) {
+    if (!phone.trim() || phone === "+7") {
       newErrors.phone = "Введите номер телефона"
-    } else if (!/^[\d\s\+\-\(\)]{7,20}$/.test(phone.trim())) {
-      newErrors.phone = "Введите корректный номер"
+    } else if (!/^\+7\s\(\d{3}\)\s\d{3}-\d{2}-\d{2}$/.test(phone.trim())) {
+      newErrors.phone = "Введите номер полностью"
     }
     if (!consent) newErrors.consent = "Необходимо согласие на обработку данных"
     return newErrors
@@ -61,7 +61,7 @@ export function ContactModal({ open, onOpenChange }: ContactModalProps) {
   function handleClose(open: boolean) {
     if (!open) {
       setName("")
-      setPhone("")
+      setPhone("+7")
       setConsent(false)
       setSubmitted(false)
       setErrors({})
@@ -76,11 +76,10 @@ export function ContactModal({ open, onOpenChange }: ContactModalProps) {
           <>
             <DialogHeader>
               <DialogTitle className="text-xl leading-snug">
-                Получите коммерческое предложение за&nbsp;24&nbsp;часа
+                Оставьте номер — мы перезвоним
               </DialogTitle>
               <DialogDescription className="text-sm leading-relaxed">
-                Оставьте контакты — менеджер подберёт оптимальный режим
-                обработки и подготовит КП с ценами для вашей отрасли.
+                Укажите имя и телефон, куда вам удобно перезвонить.
               </DialogDescription>
             </DialogHeader>
 
@@ -106,7 +105,16 @@ export function ContactModal({ open, onOpenChange }: ContactModalProps) {
                   type="tel"
                   placeholder="+7 (999) 000-00-00"
                   value={phone}
-                  onChange={(e) => setPhone(e.target.value)}
+                  onChange={(e) => {
+                    const digits = e.target.value.replace(/\D/g, "")
+                    const d = digits.startsWith("7") ? digits.slice(1) : digits.startsWith("8") ? digits.slice(1) : digits
+                    let masked = "+7"
+                    if (d.length > 0) masked += " (" + d.slice(0, 3)
+                    if (d.length >= 3) masked += ") " + d.slice(3, 6)
+                    if (d.length >= 6) masked += "-" + d.slice(6, 8)
+                    if (d.length >= 8) masked += "-" + d.slice(8, 10)
+                    setPhone(masked)
+                  }}
                   autoComplete="tel"
                 />
                 {errors.phone && (
