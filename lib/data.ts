@@ -4,8 +4,8 @@ export const company = {
   shortName: 'НПО Принцепс',
   product: 'МАКСФЛОК',
   address: '455000, г. Магнитогорск, ул. Интернациональная, 1а',
-  phone: '+7-916-9441990',
-  phoneHref: 'tel:+79169441990',
+  phone: '+7-495-1915127',
+  phoneHref: 'tel:+74951915127',
   email: 'info@printseps.ru',
   year: 2026,
 }
