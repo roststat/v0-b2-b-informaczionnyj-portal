@@ -62,7 +62,7 @@ export default function VkusnyNoosPage() {
                     className="block text-lg font-black leading-none text-[#e8334a] drop-shadow"
                     style={{fontStyle: "italic", letterSpacing: "-0.02em"}}
                   >
-                    ВКУС-НЫЙ
+                    ВКУСНЫЙ
                   </span>
                   <span
                     className="block text-6xl font-black leading-none text-white drop-shadow-lg sm:text-8xl"
