@@ -25,16 +25,14 @@ export async function submitLeadAction(formData: {
   // Отправка уведомления в Telegram (независимо от записи в файл)
   const token = process.env.TELEGRAM_BOT_TOKEN
   const chatId = process.env.TELEGRAM_CHAT_ID
-  console.log("[Telegram] token present:", !!token, "chatId present:", !!chatId)
   if (token && chatId) {
     const source = parsed.data.source === "contact_page" ? "Страница контактов" : "Форма на сайте"
     const text = `🔔 *Новая заявка с сайта МАКСФЛОК*\n\n👤 Имя: ${parsed.data.name}\n📞 Телефон: ${parsed.data.phone}\n📍 Источник: ${source}`
-    const tgRes = await fetch(`https://api.telegram.org/bot${token}/sendMessage`, {
+    await fetch(`https://api.telegram.org/bot${token}/sendMessage`, {
       method: "POST",
       headers: { "Content-Type": "application/json" },
       body: JSON.stringify({ chat_id: chatId, text, parse_mode: "Markdown" }),
-    }).catch((e) => { console.log("[Telegram] fetch error:", e); return null })
-    console.log("[Telegram] response:", tgRes ? await tgRes.text() : "null")
+    }).catch(() => {})
   }
 
   try {
