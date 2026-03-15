@@ -13,6 +13,7 @@ import { Button } from "@/components/ui/button";
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import { SiteHeader } from "@/components/site-header";
 import { SiteFooter } from "@/components/site-footer";
+import { ContactButton } from "@/components/contact-button";
 import { BreadcrumbNav } from "@/components/breadcrumb-nav";
 import { company } from "@/lib/data";
 
@@ -235,12 +236,7 @@ export default function AboutPage() {
               </div>
             </div>
             <div className="flex items-end justify-start sm:justify-end">
-              <Button asChild size="lg">
-                <Link href="/contact">
-                  Связаться с нами
-                  <ArrowRight className="ml-2 h-4 w-4" />
-                </Link>
-              </Button>
+              <ContactButton size="lg" label="Связаться с нами" />
             </div>
           </div>
         </section>

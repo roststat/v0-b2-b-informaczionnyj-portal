@@ -78,16 +78,11 @@ export default function HomePage() {
                 видов патогенов.
               </p>
               <div className="flex flex-wrap gap-3">
-                <Button
+                <ContactButton
                   size="lg"
-                  asChild
+                  label="Запросить информацию"
                   className="bg-sidebar-primary text-sidebar-primary-foreground hover:bg-sidebar-primary/90"
-                >
-                  <Link href="/contact">
-                    Запросить информацию
-                    <ArrowRight className="ml-2 h-4 w-4" />
-                  </Link>
-                </Button>
+                />
                 <Button
                   size="lg"
                   variant="outline"
@@ -382,17 +377,11 @@ export default function HomePage() {
                 </p>
               </div>
               <div className="flex flex-col gap-3 sm:flex-row">
-                <Button
+                <ContactButton
                   size="lg"
-                  variant="secondary"
-                  asChild
+                  label="Запросить КП"
                   className="bg-primary-foreground text-primary hover:bg-primary-foreground/90"
-                >
-                  <Link href="/contact">
-                    Запросить КП
-                    <ArrowRight className="ml-2 h-4 w-4" />
-                  </Link>
-                </Button>
+                />
                 <Button
                   size="lg"
                   variant="outline"
@@ -429,7 +418,6 @@ export default function HomePage() {
                       href: "/faq",
                     },
                     { label: "Блог и статьи", href: "/blog" },
-                    { label: "Контакты производителя", href: "/contact" },
                   ].map((link) => (
                     <Link
                       key={link.href}

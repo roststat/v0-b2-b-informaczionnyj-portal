@@ -6,6 +6,7 @@ import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import { SiteHeader } from "@/components/site-header";
 import { SiteFooter } from "@/components/site-footer";
 import { BreadcrumbNav } from "@/components/breadcrumb-nav";
+import { ContactButton } from "@/components/contact-button";
 import { cases } from "@/lib/data";
 
 export const metadata: Metadata = {
@@ -75,12 +76,7 @@ export default function CasesPage() {
             Свяжитесь с нами для подбора оптимального решения для вашего
             предприятия.
           </p>
-          <Button asChild size="lg">
-            <Link href="/contact">
-              Запросить консультацию
-              <ArrowRight className="ml-2 h-4 w-4" />
-            </Link>
-          </Button>
+          <ContactButton size="lg" label="Запросить консультацию" />
         </div>
       </main>
       <SiteFooter />

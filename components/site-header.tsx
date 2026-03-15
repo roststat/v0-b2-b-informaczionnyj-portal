@@ -5,6 +5,7 @@ import Link from "next/link";
 import { Phone, Mail, Menu, X, ChevronDown } from "lucide-react";
 import { company, navigation } from "@/lib/data";
 import { Button } from "@/components/ui/button";
+import { ContactButton } from "@/components/contact-button";
 import { cn } from "@/lib/utils";
 
 export function SiteHeader() {
@@ -105,9 +106,7 @@ export function SiteHeader() {
 
           {/* CTA + Mobile toggle */}
           <div className="flex items-center gap-2">
-            <Button asChild className="hidden sm:inline-flex">
-              <Link href="/contact">Запросить КП</Link>
-            </Button>
+            <ContactButton size="default" label="Запросить КП" className="hidden sm:inline-flex" />
             <button
               type="button"
               className="rounded-md p-2 text-foreground lg:hidden"
@@ -148,11 +147,7 @@ export function SiteHeader() {
               </div>
             ))}
             <div className="mt-4 border-t pt-4">
-              <Button asChild className="w-full">
-                <Link href="/contact" onClick={() => setMobileOpen(false)}>
-                  Запросить КП
-                </Link>
-              </Button>
+              <ContactButton label="Запросить КП" className="w-full" />
             </div>
           </div>
         )}

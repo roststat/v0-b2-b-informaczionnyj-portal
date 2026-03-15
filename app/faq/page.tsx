@@ -11,6 +11,7 @@ import {
 import { SiteHeader } from "@/components/site-header";
 import { SiteFooter } from "@/components/site-footer";
 import { BreadcrumbNav } from "@/components/breadcrumb-nav";
+import { ContactButton } from "@/components/contact-button";
 import { faqData } from "@/lib/data";
 
 export const metadata: Metadata = {
@@ -64,12 +65,7 @@ export default function FaqPage() {
           <p className="mb-4 text-muted-foreground">
             Наши специалисты готовы ответить на любые вопросы о МАКСФЛОКЕ.
           </p>
-          <Button asChild>
-            <Link href="/contact">
-              Задать вопрос
-              <ArrowRight className="ml-2 h-4 w-4" />
-            </Link>
-          </Button>
+          <ContactButton label="Задать вопрос" />
         </div>
       </main>
       <SiteFooter />

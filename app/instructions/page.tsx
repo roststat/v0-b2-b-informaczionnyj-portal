@@ -12,6 +12,7 @@ import {
 import { SiteHeader } from "@/components/site-header";
 import { SiteFooter } from "@/components/site-footer";
 import { BreadcrumbNav } from "@/components/breadcrumb-nav";
+import { ContactButton } from "@/components/contact-button";
 import { instructions } from "@/lib/data";
 
 export const metadata: Metadata = {
@@ -180,12 +181,7 @@ export default function InstructionsPage() {
             Свяжитесь с нами, и наши специалисты подготовят рекомендации для
             вашего конкретного случая.
           </p>
-          <Button asChild>
-            <Link href="/contact">
-              Запросить консультацию
-              <ArrowRight className="ml-2 h-4 w-4" />
-            </Link>
-          </Button>
+          <ContactButton label="Запросить консультацию" />
         </div>
       </main>
       <SiteFooter />

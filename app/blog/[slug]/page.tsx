@@ -6,6 +6,7 @@ import { Button } from "@/components/ui/button";
 import { SiteHeader } from "@/components/site-header";
 import { SiteFooter } from "@/components/site-footer";
 import { BreadcrumbNav } from "@/components/breadcrumb-nav";
+import { ContactButton } from "@/components/contact-button";
 import { blogPosts, company } from "@/lib/data";
 
 export async function generateMetadata({
@@ -89,12 +90,7 @@ export default async function BlogPostPage({
             <p className="mb-4 text-sm text-muted-foreground">
               Свяжитесь с нами для консультации. Телефон: {company.phone}
             </p>
-            <Button asChild>
-              <Link href="/contact">
-                Связаться с нами
-                <ArrowRight className="ml-2 h-4 w-4" />
-              </Link>
-            </Button>
+            <ContactButton label="Связаться с нами" />
           </div>
         </article>
 
