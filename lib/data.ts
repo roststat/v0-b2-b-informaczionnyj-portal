@@ -37,7 +37,6 @@ export const navigation = [
   },
   { name: 'Проекты', href: '/projects' },
   { name: 'Блог', href: '/blog' },
-  { name: 'Вовантий', href: '/vovantiy' },
   { name: 'Контакты', href: '/contact' },
 ]
 
